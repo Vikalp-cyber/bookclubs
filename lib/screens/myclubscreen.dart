@@ -1,5 +1,7 @@
 import 'package:bookclubs/model/club.dart';
 import 'package:bookclubs/model/user.dart';
+import 'package:bookclubs/screens/tabScreen/about.dart';
+import 'package:bookclubs/screens/tabScreen/members.dart';
 import 'package:bookclubs/utils/text.dart';
 import 'package:bookclubs/widgets/colors.dart';
 import 'package:flutter/material.dart';
@@ -19,10 +21,10 @@ class _MyClubPageState extends State<MyClubPage> {
       length: 8, // Number of tabs
       child: Scaffold(
         appBar: AppBar(
-          title: Consumer<Club>(
-            builder: (context, club, child) {
+          title: Consumer<UserModel>(
+            builder: (context, user, child) {
               return Text(
-                club.clubName,
+                user.username,
                 style: MyText.heading1,
               );
             },
@@ -60,12 +62,8 @@ class _MyClubPageState extends State<MyClubPage> {
         body: const TabBarView(
           children: [
             // Content for Currently Reading tab
-            Center(
-              child: Text('About'),
-            ),
-            Center(
-              child: Text('Members'),
-            ),
+            About(),
+            Members(),
             Center(
               child: Text('Currently Reading Content'),
             ),

@@ -104,7 +104,7 @@ class ApiServices {
         if(isInClub){
           Provider.of<IsInClub>(context, listen: false)
             .setIsInClub(isInClub: data['is_in_club'], clubId: data['club_id']);
-          clubDetails(context);
+          // clubDetails(context);
         }
         else{
           Provider.of<IsInClub>(context, listen: false)
